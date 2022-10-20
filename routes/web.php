@@ -20,3 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\PrincipalController::class, 'principal']);
 Route::get('/sobre-nos', [App\Http\Controllers\SobreNosController::class, 'sobreNos']);
 Route::get('/contato', [App\Http\Controllers\ContatoController::class, 'contato']);
+Route::get('/contato/{nome?}/{categoria?}/{assunto?}/{mensagem?}', function(
+    $nome = 'Nome não informado', 
+    $categoria = 'Categoria não informada', 
+    $assunto = 'Assunto não informado', 
+    $mensagem = 'Mensagem não informada' 
+){
+    echo "Estamos aqui: $nome - $categoria - $assunto - $mensagem";
+});
